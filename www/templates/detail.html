@@ -1,5 +1,23 @@
 <ion-view view-title={{result[index].name}}>
-  <div class="">
-
+  <div class="bar bar-subheader">
+    <div class="item item-avatar-left">
+      <img ng-src={{result[index].icon}}>
+      <p>{{result[index].type}} ,{{result[index].date}}</p>
+      <p>{{result[index].location}}</p>
+    </div>
   </div>
+  <ion-content class="ionic-body" style="padding-top: 10%">
+    <div class="item-image">
+      <img ng-src={{result[index].image}}>
+    </div>
+    <div>
+
+      <p>{{result[index].Ldescription}}</p>
+      <ion-list>
+      <ion-item class="item-avatar inline" ng-repeat="item in result[index].founders">
+          <img ng-src="{{item.img}}">
+      </ion-item>
+      </ion-list>
+    </div>
+  </ion-content>
 </ion-view>
