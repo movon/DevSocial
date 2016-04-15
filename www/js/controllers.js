@@ -55,7 +55,7 @@ angular.module('starter.controllers', [])
 .controller('SearchCtrl', function($scope, $state, $http) {
   //sql stuff $scope.results = response.data
   $scope.results = [{
-    "name": "1",  
+    "name": "1",
     "aboutme": "1"
   },{
     "name": "2",
@@ -63,6 +63,16 @@ angular.module('starter.controllers', [])
   }
   ];
 
+})
+
+.controller('UpEventsController', function($scope, $state){
+  $scope.result = [{
+    "name": "HackTrack",
+    "type": "Hackathon",
+    "date": "15/4/2016",
+    "location": "Hangar 26, Namal Tel Avivm, Israel",
+    "description": "Cool hackathon develop teen"
+  }];
 })
 
 .controller('SignUpCtrl', function($scope,$cordovaCamera, $ionicLoading, $window,$ionicActionSheet,$timeout) {
