@@ -87,17 +87,28 @@ angular.module('starter.controllers', [])
   $scope.data = { "ImageURI" :  "Select Image" };
   $scope.takePicture = function() {
     var options = {
+      // quality: 50,
+      // destinationType: Camera.DestinationType.FILE_URL,
+      // sourceType: Camera.PictureSourceType.CAMERA
+
       quality: 50,
-      destinationType: Camera.DestinationType.FILE_URL,
-      sourceType: Camera.PictureSourceType.CAMERA
+      destinationType: Camera.DestinationType.DATA_URL,
+      sourceType: Camera.PictureSourceType.CAMERA,
+      allowEdit: true,
+      encodingType: Camera.EncodingType.JPEG,
+      targetWidth: 100,
+      targetHeight: 100,
+      popoverOptions: CameraPopoverOptions,
+      saveToPhotoAlbum: false,
+      correctOrientation:true
     };
     $cordovaCamera.getPicture(options).then(
       function(imageData) {
         $scope.picData = imageData;
         $scope.ftLoad = true;
         $window.localStorage.setItem('fotoUp', imageData);
-        var image = document.getElementById('myImage');
-        image.src = "data:image/jpeg;base64," + imageData;
+        // var image = document.getElementById('myImage');
+        $scope.imageURI = "data:image/jpeg;base64," + imageData;
         $ionicLoading.show({template: 'Foto acquisita...', duration:500});
       },
       function(err){
@@ -117,8 +128,8 @@ angular.module('starter.controllers', [])
         window.resolveLocalFileSystemURI(imageURI, function(fileEntry) {
           $scope.picData = fileEntry.nativeURL;
           $scope.ftLoad = true;
-          var image = document.getElementById('myImage');
-          image.src = fileEntry.nativeURL;
+          // var image = document.getElementById('myImage');
+          $scope.imageURI = fileEntry.nativeURL;
         });
         $ionicLoading.show({template: 'Foto acquisita...', duration:500});
       },
