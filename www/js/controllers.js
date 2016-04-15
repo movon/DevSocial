@@ -70,12 +70,36 @@ angular.module('starter.controllers', [])
   $scope.result = [{
     "name": "HackTrack",
     "type": "Hackathon",
-    "date": "15/4/2016",
+    "date": "15/4/2016   11:00",
     "location": "Hangar 26, Namal Tel Avivm, Israel",
     "description": "Cool hackathon developed by teens for teens",
     "Ldescription": "HackTrack is an international hackathon competition where the most talented, aspiring and passionate teenagers come together to create and invent new technologies, apps, and other products while forming an international community of young innovators.",
-    "icon": "img/hackTrack.jpg"
-  }];
+    "icon": "img/hackTrack.jpg",
+    "image": "img/hackTrackMain.jpg",
+    "founders": [{
+      "name": "founder1",
+      "img": "img/hackTrackFounder1.jpg"
+    },
+      {"name": "founder2",
+        "img": "img/hackTrackFounder2.jpg"
+    }],
+    "teams": [{
+      "member1": "Roy Shulman",
+      "member2": "Daniel Eliad",
+      "member3": "Tal Bortman",
+      "member4": "Arad Rozenblat",
+      "needed": "designer"
+    }]
+  },{"name": "CyberKnight",
+    "type": "Competition",
+    "date": "7/4/2016   20:00",
+    "location": "Mitham Hatahana, Jerusalm, Israel",
+    "description": "Hacking competition for teens and adults",
+    "Ldescription": "Bustling city is under attack technologically.Critical computing systems are breached: Traffic stop functioning, trains, planes, power plants and more .. normal life of the residents are violated and created chaos. Now comes the turn of technologists: the teams solve mathematical puzzles / programming based technologies and their goal is to restore order to buy",
+    "icon": "img/CyberKnightLogo.jpg",
+    "image": "img/CyberKnight.jpg",
+    "founders": []
+}];
 })
 
 .controller('SignUpCtrl', function($scope,$cordovaCamera, $ionicLoading, $window,$ionicActionSheet,$timeout) {
@@ -87,17 +111,28 @@ angular.module('starter.controllers', [])
   $scope.data = { "ImageURI" :  "Select Image" };
   $scope.takePicture = function() {
     var options = {
+      // quality: 50,
+      // destinationType: Camera.DestinationType.FILE_URL,
+      // sourceType: Camera.PictureSourceType.CAMERA
+
       quality: 50,
-      destinationType: Camera.DestinationType.FILE_URL,
-      sourceType: Camera.PictureSourceType.CAMERA
+      destinationType: Camera.DestinationType.DATA_URL,
+      sourceType: Camera.PictureSourceType.CAMERA,
+      allowEdit: true,
+      encodingType: Camera.EncodingType.JPEG,
+      targetWidth: 100,
+      targetHeight: 100,
+      popoverOptions: CameraPopoverOptions,
+      saveToPhotoAlbum: false,
+      correctOrientation:true
     };
     $cordovaCamera.getPicture(options).then(
       function(imageData) {
         $scope.picData = imageData;
         $scope.ftLoad = true;
         $window.localStorage.setItem('fotoUp', imageData);
-        var image = document.getElementById('myImage');
-        image.src = "data:image/jpeg;base64," + imageData;
+        // var image = document.getElementById('myImage');
+        $scope.imageURI = "data:image/jpeg;base64," + imageData;
         $ionicLoading.show({template: 'Foto acquisita...', duration:500});
       },
       function(err){
@@ -117,8 +152,8 @@ angular.module('starter.controllers', [])
         window.resolveLocalFileSystemURI(imageURI, function(fileEntry) {
           $scope.picData = fileEntry.nativeURL;
           $scope.ftLoad = true;
-          var image = document.getElementById('myImage');
-          image.src = fileEntry.nativeURL;
+          // var image = document.getElementById('myImage');
+          $scope.imageURI = fileEntry.nativeURL;
         });
         $ionicLoading.show({template: 'Foto acquisita...', duration:500});
       },
