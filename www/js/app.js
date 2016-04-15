@@ -97,10 +97,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
   })
 
     .state('app.signup.profile', {
-      url: '/profile',
+      url: '/profilesignup',
       views: {
         'form': {
-          templateUrl: 'templates/form-profile.html',
+          templateUrl: 'templates/form-profile.html'
           // controller: 'SignUpCtrl'
         }
       }
@@ -108,10 +108,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
 
     // url will be /form/interests
     .state('app.signup.personal', {
-      url: '/personal',
+      url: '/personalsignup',
       views: {
         'form': {
-          templateUrl: 'templates/form-personal.html',
+          templateUrl: 'templates/form-personal.html'
           // controller: 'SignUpCtrl'
         }
       }
@@ -119,10 +119,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
 
     // url will be /form/payment
     .state('app.signup.professional', {
-      url: '/professional',
+      url: '/professionalsignup',
       views : {
         'form': {
-          templateUrl: 'templates/form-professional.html',
+          templateUrl: 'templates/form-professional.html'
           // controller: 'SignUpCtrl'
         }
       }

@@ -103,7 +103,9 @@ angular.module('starter.controllers', [])
       function(imageData) {
         $scope.picData = imageData;
         $scope.ftLoad = true;
-        $window.localStorage['fotoUp'] =  imageData;
+        $window.localStorage.setItem('fotoUp', imageData);
+        var image = document.getElementById('myImage');
+        image.src = "data:image/jpeg;base64," + imageData;
         $ionicLoading.show({template: 'Foto acquisita...', duration:500});
       },
       function(err){
