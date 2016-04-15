@@ -70,11 +70,19 @@ angular.module('starter.controllers', [])
   $scope.result = [{
     "name": "HackTrack",
     "type": "Hackathon",
-    "date": "15/4/2016",
+    "date": "15/4/2016   11:00",
     "location": "Hangar 26, Namal Tel Avivm, Israel",
     "description": "Cool hackathon developed by teens for teens",
     "Ldescription": "HackTrack is an international hackathon competition where the most talented, aspiring and passionate teenagers come together to create and invent new technologies, apps, and other products while forming an international community of young innovators.",
-    "icon": "img/hackTrack.jpg"
+    "icon": "img/hackTrack.jpg",
+    "image": "img/hackTrackMain.jpg",
+    "founders": [{
+      "name": "founder1",
+      "img": "img/hackTrackFounder1.jpg"
+    },
+      {"name": "founder2",
+        "img": "img/hackTrackFounder2.jpg"
+    }]
   }];
 })
 
