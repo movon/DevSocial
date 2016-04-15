@@ -55,7 +55,7 @@ angular.module('starter.controllers', [])
 .controller('PlaylistCtrl', function($scope, $stateParams) {
 })
 
-.controller('SignUpCtrl', function($scope,$cordovaCamera, $ionicLoading, $localstorage,$ionicActionSheet,$timeout) {
+.controller('SignUpCtrl', function($scope,$cordovaCamera, $ionicLoading, $window,$ionicActionSheet,$timeout) {
   $scope.showActionSheet = function() {
 
     // Show the action sheet
@@ -64,17 +64,19 @@ angular.module('starter.controllers', [])
         { text: 'Take Picture' },
         { text: 'From Gallery' }
       ],
-      titleText: 'Select Image',
+      titleText: 'Choose Image',
       cancelText: 'Cancel',
       cancel: function() {
         // add cancel code..
       },
       buttonClicked: function(index) {
-
         return true;
       }
     });
-    };
+
+    // For example's sake, hide the sheet after two seconds
+
+  };
 
   $scope.data = { "ImageURI" :  "Select Image" };
   $scope.takePicture = function() {
@@ -87,7 +89,7 @@ angular.module('starter.controllers', [])
       function(imageData) {
         $scope.picData = imageData;
         $scope.ftLoad = true;
-        $localstorage.set('fotoUp', imageData);
+        $window.localStorage['fotoUp'] =  imageData;
         $ionicLoading.show({template: 'Foto acquisita...', duration:500});
       },
       function(err){

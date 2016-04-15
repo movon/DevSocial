@@ -68,12 +68,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
       }
     }
   })
-  
+
   .state('app.signup', {
     url: '/signup',
     views: {
       'menuContent': {
-        templateUrl: 'templates/signup.html', 
+        templateUrl: 'templates/signup.html',
         controller: 'SignUpCtrl'
       }
     }
