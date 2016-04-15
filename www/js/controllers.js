@@ -82,8 +82,24 @@ angular.module('starter.controllers', [])
     },
       {"name": "founder2",
         "img": "img/hackTrackFounder2.jpg"
+    }],
+    "teams": [{
+      "member1": "Roy Shulman",
+      "member2": "Daniel Eliad",
+      "member3": "Tal Bortman",
+      "member4": "Arad Rozenblat",
+      "needed": "designer"
     }]
-  }];
+  },{"name": "CyberKnight",
+    "type": "Competition",
+    "date": "7/4/2016   20:00",
+    "location": "Mitham Hatahana, Jerusalm, Israel",
+    "description": "Hacking competition for teens and adults",
+    "Ldescription": "Bustling city is under attack technologically.Critical computing systems are breached: Traffic stop functioning, trains, planes, power plants and more .. normal life of the residents are violated and created chaos. Now comes the turn of technologists: the teams solve mathematical puzzles / programming based technologies and their goal is to restore order to buy",
+    "icon": "img/CyberKnightLogo.jpg",
+    "image": "img/CyberKnight.jpg",
+    "founders": []
+}];
 })
 
 .controller('SignUpCtrl', function($scope,$cordovaCamera, $ionicLoading, $window,$ionicActionSheet,$timeout) {
