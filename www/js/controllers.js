@@ -56,6 +56,7 @@ angular.module('starter.controllers', [])
 })
 
 .controller('SignUpCtrl', function($scope,$cordovaCamera, $ionicLoading, $window,$ionicActionSheet,$timeout) {
+  $scope.formData = {};
   $scope.showActionSheet = function() {
 
     // Show the action sheet

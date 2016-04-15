@@ -75,9 +75,45 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
       'menuContent': {
         templateUrl: 'templates/signup.html',
         controller: 'SignUpCtrl'
+      },
+      'form': {
+        templateUrl: 'templates/form-profile.html',
+        controller: 'SignUpCtrl'
       }
     }
-  });
+  })
+
+    .state('app.signup.profile', {
+      url: '/signup/profile',
+      views: {
+        'form': {
+          templateUrl: 'templates/form-profile.html',
+          // controller: 'SignUpCtrl'
+        }
+      }
+    })
+
+    // url will be /form/interests
+    .state('app.signup.personal', {
+      url: '/signup/personal',
+      views: {
+        'form': {
+          templateUrl: 'templates/form-personal.html',
+          // controller: 'SignUpCtrl'
+        }
+      }
+    })
+
+    // url will be /form/payment
+    .state('app.signup.professional', {
+      url: '/signup/professional',
+      views : {
+        'form': {
+          templateUrl: 'templates/form-professional.html',
+          // controller: 'SignUpCtrl'
+        }
+      }
+    });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/playlists');
 });

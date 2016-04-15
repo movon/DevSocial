@@ -1,0 +1,25 @@
+      <div class="row-center" style="width:33.33%;margin-left:33.33%" >
+        <img ng-src="http://placehold.it/100x100" class="col text-center" style="border-radius: 100%!important;" ng-click="showActionSheet()">
+      </div>
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Full Name</span>
+          <input type="text" ng-model="formData.fullname">
+        </label>
+        <label class="item item-input">
+          <span class="input-label">Age</span>
+          <input type="number" ng-model="formData.age">
+        </label>
+
+        <ion-item class="item-input">
+          <ion-label floating>About Me</ion-label>
+          <textarea ng-model="formData.about"></textarea>
+        </ion-item>
+        <ion-item class="item-input">
+          <ion-label floating>Contact Details</ion-label>
+          <textarea ng-model="formData.contact"></textarea>
+        </ion-item>
+        <label class="item">
+          <button class="button button-block button-positive" ui-sref="app.signup.professional">Continue</button>
+        </label>
+      </div>
