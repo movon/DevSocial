@@ -52,7 +52,17 @@ angular.module('starter.controllers', [])
   ];
 })
 
-.controller('PlaylistCtrl', function($scope, $stateParams) {
+.controller('SearchCtrl', function($scope, $state, $http) {
+  //sql stuff $scope.results = response.data
+  $scope.results = [{
+    "name": "1",  
+    "aboutme": "1"
+  },{
+    "name": "2",
+    "aboutme": "1"
+  }
+  ];
+
 })
 
 .controller('SignUpCtrl', function($scope,$cordovaCamera, $ionicLoading, $localstorage,$ionicActionSheet,$timeout) {
