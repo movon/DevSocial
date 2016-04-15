@@ -1,21 +1,23 @@
-<ion-view view-title="Search">
+<ion-view view-title="Profile">
 
-    <ion-tabs class="tabs-positive tabs-icon-top">
+    <ion-tabs class="tabs-positive tabs-icon-top tabs-energized">
 
-      <ion-tab title="Home" icon-on="ion-ios-filing" icon-off="ion-ios-filing-outline">
+      <ion-tab title="Home" icon-on="ion-ios-filing" icon-off="ion-ios-filing-outline" ui-sref="app.profile.personal">
         <!-- Tab 1 content -->
         <p>HELO TAB 1</p>
       </ion-tab>
 
-      <ion-tab title="About" icon-on="ion-ios-clock" icon-off="ion-ios-clock-outline">
+      <ion-tab title="About" icon-on="ion-ios-clock" icon-off="ion-ios-clock-outline" href="/profile/professional">
         <!-- Tab 2 content -->
         <p>HELLO TAB 2</p>
       </ion-tab>
 
-      <ion-tab title="Settings" icon-on="ion-ios-gear" icon-off="ion-ios-gear-outline">
+      <ion-tab title="Settings" icon-on="ion-ios-gear" icon-off="ion-ios-gear-outline" href="/profile/personal">
         <!-- Tab 3 content -->
+        <p>HELO FROM TAB 3</p>
       </ion-tab>
 
     </ion-tabs>
+    <div id="profile-tab-views" ui-view="profileTab"></div>
 
 </ion-view>
