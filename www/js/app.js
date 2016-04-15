@@ -50,6 +50,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
         }
       }
     })
+
+    .state('app.detail',{
+      url: '/browse/aId',
+      views: {
+        'menuContent':{
+          templateUrl: 'template/detail.html',
+          controller: 'UpEventsController'
+        }
+      }
+    })
+
     .state('app.playlists', {
       url: '/playlists',
       views: {

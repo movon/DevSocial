@@ -7,10 +7,15 @@
   </div>
   <ion-content ng-controller="UpEventsController" class="has-subheader">
     <ion-list>
-      <ion-item ng-repeat="item in result | filter: query">
-      <h2><b>{{item.name}}</b> {{item.type}} {{item.date}}</h2>
-      <h3>{{item.location}}</h3>
-      <p>{{item.description}}</p>
+      <ion-item ng-repeat="item in result | filter: query" href="#/app/browse/{{item.name}}">
+        <div class="item item-avatar">
+          <h2>{{item.name}}</h2>
+          <p>{{item.type}} {{item.date}}</p>
+        </div>
+        <div class="item item-body">
+          <h2>{{item.location}}</h2>
+          <p>{{item.description}}</p>
+        </div>
       </ion-item>
     </ion-list>
   </ion-content>
