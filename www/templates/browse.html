@@ -7,8 +7,9 @@
   </div>
   <ion-content ng-controller="UpEventsController" class="has-subheader">
     <ion-list>
-      <ion-item ng-repeat="item in result | filter: query" href="#/app/browse/{{item.name}}">
+      <ion-item ng-repeat="item in result | filter: query" href="#/app/browse/{{item.name}}/{{$index}}">
         <div class="item item-avatar">
+          <img ng-src={{item.icon}}>
           <h2>{{item.name}}</h2>
           <p>{{item.type}} {{item.date}}</p>
         </div>

@@ -53,7 +53,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
     })
 
     .state('app.detail',{
-      url: '/browse/:aId',
+      url: '/browse/:aId/:index',
       views: {
         'menuContent':{
           templateUrl: 'templates/detail.html',
