@@ -50,6 +50,17 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
         }
       }
     })
+
+    .state('app.detail',{
+      url: '/browse/:aId',
+      views: {
+        'menuContent':{
+          templateUrl: 'templates/detail.html',
+          controller: 'UpEventsController'
+        }
+      }
+    })
+
     .state('app.playlists', {
       url: '/playlists',
       views: {
@@ -95,7 +106,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
   })
 
     .state('app.signup.profile', {
-      url: '/signup/profile',
+      url: '/profile',
       views: {
         'form': {
           templateUrl: 'templates/form-profile.html',
@@ -106,7 +117,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
 
     // url will be /form/interests
     .state('app.signup.personal', {
-      url: '/signup/personal',
+      url: '/personal',
       views: {
         'form': {
           templateUrl: 'templates/form-personal.html',
@@ -117,7 +128,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
 
     // url will be /form/payment
     .state('app.signup.professional', {
-      url: '/signup/professional',
+      url: '/professional',
       views : {
         'form': {
           templateUrl: 'templates/form-professional.html',
