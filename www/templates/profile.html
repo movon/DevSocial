@@ -1,34 +1,19 @@
 <ion-view view-title="Profile">
-  <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">
-    <div class="tabs">
-      <a class="tab-item active" href="#">
-        <i class="icon ion-home"></i>
-        Test
-      </a>
-      <a class="tab-item" href="#">
-        <i class="icon ion-star"></i>
-        Favorites
-      </a>
-      <a class="tab-item" href="#">
-        <i class="icon ion-gear-a"></i>
-        Settings
-      </a>
+  <ion-content>
+    <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">
+      <div class="tabs">
+        <a class="tab-item active" ui-sref="app.profile.tab1">
+          <i class="icon ion-home"></i>
+          Test
+        </a>
+        <a class="tab-item" ui-sref="app.profile.tab2">
+          <i class="icon ion-star"></i>
+          Favorites
+        </a>
+
+      </div>
     </div>
-  </div>
-  <div class="tabs-striped tabs-color-assertive">
-    <div class="tabs">
-      <a class="tab-item active" href="#">
-        <i class="icon ion-home"></i>
-        Test
-      </a>
-      <a class="tab-item" href="#">
-        <i class="icon ion-star"></i>
-        Favorites
-      </a>
-      <a class="tab-item" href="#">
-        <i class="icon ion-gear-a"></i>
-        Settings
-      </a>
-    </div>
-  </div>
+    <div id="profile-tab-views" ui-view="profileTab"></div>
+  </ion-content>
+
 </ion-view>

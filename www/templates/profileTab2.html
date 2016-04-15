@@ -1,0 +1,24 @@
+<div class="list">
+  <ion-item class="item-input item item-stacked-label item-text-wrap">
+    <ion-label class="input-label">Skills</ion-label>
+    <textarea ng-model="formData.skills"></textarea>
+  </ion-item>
+  <ion-item class="item-input item item-stacked-label">
+    <ion-label class="input-label">Technological Interests</ion-label>
+    <textarea ng-model="formData.interests" class="item-text-wrap"></textarea>
+  </ion-item>
+  <ion-item class="item-divider">
+    Preferred Working Environment
+  </ion-item>
+  <ion-item class="item-radio">
+    <ion-radio value="separate" ng-model="formData.workEnv">Separate</ion-radio>
+  </ion-item>
+  <ion-item class="item-radio">
+    <ion-radio value="together" ng-model="formData.workEnv">Together</ion-radio>
+  </ion-item>
+  <ion-item class="item-radio">
+    <ion-radio value="skype" ng-model="formData.workEnv">Skype</ion-radio>
+  </ion-item>
+</div>
+<button class="button button-block button-positive" type="submit">Submit</button>
+<!--</div>-->
