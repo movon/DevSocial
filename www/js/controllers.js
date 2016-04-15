@@ -78,26 +78,9 @@ angular.module('starter.controllers', [])
 })
 
 .controller('SignUpCtrl', function($scope,$cordovaCamera, $ionicLoading, $window,$ionicActionSheet,$timeout) {
-  $scope.showActionSheet = function() {
-
-    // Show the action sheet
-    var hideSheet = $ionicActionSheet.show({
-      buttons: [
-        { text: 'Take Picture' },
-        { text: 'From Gallery' }
-      ],
-      titleText: 'Choose Image',
-      cancelText: 'Cancel',
-      cancel: function() {
-        // add cancel code..
-      },
-      buttonClicked: function(index) {
-        return true;
-      }
-    });
-
-    // For example's sake, hide the sheet after two seconds
-
+  $scope.formData = {};
+  $scope.doSignUp = function() {
+    //do stuff with sql
   };
 
   $scope.data = { "ImageURI" :  "Select Image" };
@@ -202,5 +185,31 @@ angular.module('starter.controllers', [])
     $ionicLoading.hide();
   }
 
+  $scope.showActionSheet = function() {
 
+    // Show the action sheet
+    var hideSheet = $ionicActionSheet.show({
+      buttons: [
+        { text: 'Take Picture' },
+        { text: 'From Gallery' }
+      ],
+      titleText: 'Choose Image',
+      cancelText: 'Cancel',
+      cancel: function() {
+        // add cancel code..
+      },
+      buttonClicked: function(index) {
+        if(index == 0) {
+          //take picture
+          $scope.takePicture();
+        } else {
+          //from gallery
+          $scope.selectPicture();
+        }
+      }
+    });
+
+    // For example's sake, hide the sheet after two seconds
+
+  };
 });
