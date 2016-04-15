@@ -65,7 +65,8 @@ angular.module('starter.controllers', [])
 
 })
 
-.controller('UpEventsController', function($scope, $state){
+.controller('UpEventsController', function($scope, $state, $stateParams){
+  $scope.index = $stateParams.index;
   $scope.result = [{
     "name": "HackTrack",
     "type": "Hackathon",
@@ -73,7 +74,7 @@ angular.module('starter.controllers', [])
     "location": "Hangar 26, Namal Tel Avivm, Israel",
     "description": "Cool hackathon developed by teens for teens",
     "Ldescription": "HackTrack is an international hackathon competition where the most talented, aspiring and passionate teenagers come together to create and invent new technologies, apps, and other products while forming an international community of young innovators.",
-
+    "icon": "img/hackTrack.jpg"
   }];
 })
 
@@ -94,7 +95,9 @@ angular.module('starter.controllers', [])
       function(imageData) {
         $scope.picData = imageData;
         $scope.ftLoad = true;
-        $window.localStorage['fotoUp'] =  imageData;
+        $window.localStorage.setItem('fotoUp', imageData);
+        var image = document.getElementById('myImage');
+        image.src = "data:image/jpeg;base64," + imageData;
         $ionicLoading.show({template: 'Foto acquisita...', duration:500});
       },
       function(err){
@@ -215,5 +218,5 @@ angular.module('starter.controllers', [])
 })
 
 .controller('ProfileCtrl',function($scope) {
-  
+
 });
