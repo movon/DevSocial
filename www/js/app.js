@@ -129,7 +129,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
     })
 
     .state('app.profile', {
-      url:'/profile',
+      url:'/profile/:profileId',
       views: {
         'menuContent': {
           templateUrl: 'templates/profile.html',
@@ -138,16 +138,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
         }
       }
     })
-    .state('app.profile.tab1', {
-      url: '/tab1',
+    .state('app.profile.personal', {
+      url: '/personal',
       views: {
         'profileTab': {
           templateUrl: 'templates/profileTab1.html'
         }
       }
     })
-    .state('app.profile.tab2', {
-      url: '/tab2',
+    .state('app.profile.professional', {
+      url: '/professional',
       views: {
         'profileTab': {
           templateUrl: 'templates/profileTab2.html'

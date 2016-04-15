@@ -1,23 +1,45 @@
 <ion-view view-title="Profile">
 
-    <ion-tabs class="tabs-positive tabs-icon-top tabs-energized">
 
-      <ion-tab title="Home" icon-on="ion-ios-filing" icon-off="ion-ios-filing-outline" ui-sref="app.profile.personal">
+  <div ng-controller="ProfileCtrl">
+    <!--<tabset id="tabset">-->
+      <!--<tab heading="Tab 1" ui-sref="app.profile.personal" active="tabs['tab1']" title="Activate tab1">-->
+        <!--bam ba da bam bam-->
+      <!--</tab>-->
+      <!--<tab heading="Tab 2" ui-sref="app.profile.professional" active="tabs['tab2']" title="Activate tab2">-->
+        <!--bom bom bom bom-->
+    <!--</tab>-->
+    <!--</tabset>-->
+    <ion-tabs class="tabs-positive tabs-icon-top">
+      <ion-tab title="Personal" icon-on="ion-ios-person" ui-sref="app.profile.personal" icon-off="ion-ios-person-outline">
         <!-- Tab 1 content -->
-        <p>HELO TAB 1</p>
       </ion-tab>
-
-      <ion-tab title="About" icon-on="ion-ios-clock" icon-off="ion-ios-clock-outline" href="/profile/professional">
+      <ion-tab title="Professional" icon-on="ion-ios-gear" ui-sref="app.profile.professional" icon-off="ion-ios-gear-outline">
         <!-- Tab 2 content -->
-        <p>HELLO TAB 2</p>
       </ion-tab>
-
-      <ion-tab title="Settings" icon-on="ion-ios-gear" icon-off="ion-ios-gear-outline" href="/profile/personal">
-        <!-- Tab 3 content -->
-        <p>HELO FROM TAB 3</p>
-      </ion-tab>
-
     </ion-tabs>
-    <div id="profile-tab-views" ui-view="profileTab"></div>
+    <ion-content class="has-header has-tabs-top">
+      <div id="profile-tab-views" ui-view="profileTab"></div>
+    </ion-content>
+
+  </div>
+  <!--</di <!--<ion-tabs class="tabs-positive tabs-icon-top tabs-energized">-->
+
+      <!--<ion-tab title="Home" icon-on="ion-ios-filing" icon-off="ion-ios-filing-outline" ui-sref="app.profile.personal">-->
+        <!--&lt;!&ndash; Tab 1 content &ndash;&gt;-->
+        <!--<p>HELO TAB 1</p>-->
+      <!--</ion-tab>-->
+
+      <!--<ion-tab title="About" icon-on="ion-ios-clock" icon-off="ion-ios-clock-outline" href="/profile/professional">-->
+        <!--&lt;!&ndash; Tab 2 content &ndash;&gt;-->
+        <!--<p>HELLO TAB 2</p>-->
+      <!--</ion-tab>-->
+
+      <!--<ion-tab title="Settings" icon-on="ion-ios-gear" icon-off="ion-ios-gear-outline" href="/profile/personal">-->
+        <!--&lt;!&ndash; Tab 3 content &ndash;&gt;-->
+        <!--<p>HELO FROM TAB 3</p>-->
+      <!--</ion-tab>-->
+
+    <!--</ion-tabs>-->
 
 </ion-view>
