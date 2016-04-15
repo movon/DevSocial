@@ -1,5 +1,17 @@
-<ion-view view-title="Browse">
-  <ion-content>
-    <h1>Browse</h1>
+<ion-view view-title="Upcoming Events">
+  <div class="bar bar-subheader item-input-inset bar-light">
+    <label class="item-input-wrapper">
+      <i class="icon ion-search placeholder-icon"></i>
+      <input type="search" ng-model="query" placeholder="Search Events">
+    </label>
+  </div>
+  <ion-content ng-controller="UpEventsController" class="has-subheader">
+    <ion-list>
+      <ion-item ng-repeat="item in result | filter: query">
+      <h2><b>{{item.name}}</b> {{item.type}} {{item.date}}</h2>
+      <h3>{{item.location}}</h3>
+      <p>{{item.description}}</p>
+      </ion-item>
+    </ion-list>
   </ion-content>
 </ion-view>
