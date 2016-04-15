@@ -52,10 +52,10 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
     })
 
     .state('app.detail',{
-      url: '/browse/aId',
+      url: '/browse/:aId',
       views: {
         'menuContent':{
-          templateUrl: 'template/detail.html',
+          templateUrl: 'templates/detail.html',
           controller: 'UpEventsController'
         }
       }
