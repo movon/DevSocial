@@ -6,7 +6,8 @@
 // 'starter.controllers' is found in controllers.js
 angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
 
-.run(function($ionicPlatform) {
+.run(function($ionicPlatform, $ionicConfig) {
+  $ionicConfig.views.maxCache(0);
   $ionicPlatform.ready(function() {
     // Hide the accessory bar by default (remove this to show the accessory bar above the keyboard
     // for form inputs)
@@ -71,16 +72,6 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
       }
     })
 
-    .state('app.profile', {
-      url: '/profile',
-      views: {
-        'menuContent': {
-          templateUrl: 'templates/profile.html',
-          controller: 'PlaylistsCtrl'
-        }
-      }
-    })
-
   .state('app.single', {
     url: '/playlists/:playlistId',
     views: {
@@ -106,7 +97,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
   })
 
     .state('app.signup.profile', {
-      url: '/signup/profile',
+      url: '/profile',
       views: {
         'form': {
           templateUrl: 'templates/form-profile.html',
@@ -117,7 +108,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
 
     // url will be /form/interests
     .state('app.signup.personal', {
-      url: '/signup/personal',
+      url: '/personal',
       views: {
         'form': {
           templateUrl: 'templates/form-personal.html',
@@ -128,11 +119,38 @@ angular.module('starter', ['ionic', 'starter.controllers', 'ngCordova'])
 
     // url will be /form/payment
     .state('app.signup.professional', {
-      url: '/signup/professional',
+      url: '/professional',
       views : {
         'form': {
           templateUrl: 'templates/form-professional.html',
           // controller: 'SignUpCtrl'
+        }
+      }
+    })
+
+    .state('app.profile', {
+      url:'/profile',
+      views: {
+        'menuContent': {
+          templateUrl: 'templates/profile.html',
+          abstract:true,
+          controller: 'ProfileCtrl'
+        }
+      }
+    })
+    .state('app.profile.tab1', {
+      url: '/tab1',
+      views: {
+        'profileTab': {
+          templateUrl: 'templates/profileTab1.html'
+        }
+      }
+    })
+    .state('app.profile.tab2', {
+      url: '/tab2',
+      views: {
+        'profileTab': {
+          templateUrl: 'templates/profileTab2.html'
         }
       }
     });

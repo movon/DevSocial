@@ -1,46 +1,19 @@
-<ion-view view-title="Search">
+<ion-view view-title="Profile">
   <ion-content>
-    <h1>Profile</h1>
+    <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">
+      <div class="tabs">
+        <a class="tab-item active" ui-sref="app.profile.tab1">
+          <i class="icon ion-home"></i>
+          Test
+        </a>
+        <a class="tab-item" ui-sref="app.profile.tab2">
+          <i class="icon ion-star"></i>
+          Favorites
+        </a>
+
+      </div>
+    </div>
+    <div id="profile-tab-views" ui-view="profileTab"></div>
   </ion-content>
-  <ion-content>
-    <section id="infoPage">
 
-      <img src="http://scnc.ukzn.ac.za/doc/TEXTS/dc/gandhi2.JPG" alt="John S. Smith" width="164" height="164" />
-
-      <header>
-        <h1>John S. Smith</h1>
-        <h2>Developer, Designer, Photographer</h2>
-      </header>
-
-      <p class="description">I am a webdeveloper living in California. I enjoy designing and coding web applications, photography, surfing and music.<br />
-        <br />
-        Follow me on twitter or facebook.</p>
-
-      <a href="http://www.facebook.com/" class="grayButton facebook">Find me on Facebook</a>
-      <a href="http://twitter.com/Tutorialzine" class="grayButton twitter">Follow me on Twitter</a>
-
-      <ul class="vcard">
-        <li class="fn">John S. Smith</li>
-        <li class="org">Google Inc</li>
-        <li class="tel">12345678910</li>
-        <li><a class="url" href="http://tutorialzine.com/">http://tutorialzine.com/</a></li>
-      </ul>
-
-    </section>
-
-    <section id="links">
-      <a href="?vcard" class="vcard">Download as V-Card</a>
-      <a href="?json" class="json">Get as a JSON feed</a>
-      <p>In this tutorial: <a href="http://www.flickr.com/photos/levycarneiro/4144428707/">Self Portrait</a> by <a href="http://www.flickr.com/photos/levycarneiro/">Levy Carneiro Jr</a></p>
-    </section>
-
-    <footer>
-      <h2>Creating a PHP &amp; CSS Powered About Page</h2>
-      <a class="tzine" href="http://tutorialzine.com/2011/07/about-page-vcard-php-css/">Read &amp; Download on</a>
-    </footer>
-
-    <!-- BSA AdPacks code. Please ignore and remove. -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
-    <script src="http://cdn.tutorialzine.com/misc/adPacks/v1.js" async></script>
-  </ion-content>
 </ion-view>
