@@ -16,7 +16,16 @@
           <img ng-src="{{item.img}}">
         </ion-item>
         <ion-item class="item-divider">Teams</ion-item>
-        <ion-item class="item-text-wrap" ng-repeat="item in result[index].teams"><p>{{item.member1}},{{item.member2}}, {{item.member3}}, {{item.member4}}</p><p><b>Needed: {{item.needed}}</b></p></ion-item>
+        <ion-item class="item-text-wrap" ng-repeat="team in result[index].teams">
+          <ion-list>
+            <ion-item class="item-divider">Team Name: {{team.teamName}}</ion-item>
+            <ion-item ng-repeat="member in team.team">
+              {{member.name}}
+            </ion-item>
+            <ion-item class="item-divider">Required Roles</ion-item>
+            <ion-item ng-repeat="position in team.needed">{{position}}</ion-item>
+          </ion-list>
+        </ion-item>
     </div>
       </ion-list>
   </ion-content>

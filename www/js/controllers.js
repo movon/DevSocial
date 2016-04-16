@@ -83,13 +83,13 @@ angular.module('starter.controllers', [])
       {"name": "founder2",
         "img": "img/hackTrackFounder2.jpg"
     }],
-    "teams": [{
-      "member1": "Roy Shulman",
-      "member2": "Daniel Eliad",
-      "member3": "Tal Bortman",
-      "member4": "Arad Rozenblat",
-      "needed": "designer"
-    }]
+    "teams": [
+      {
+        team: [{"name": "Roy Shulman"}, {"name": "Daniel Eliad"},{"name": "Tal Bortman"},{"name": "Arad Rozenblat"}],
+        teamName: "mov_on",
+        needed: ["designer"]
+      }],
+
   },{"name": "CyberKnight",
     "type": "Competition",
     "date": "7/4/2016   20:00",
