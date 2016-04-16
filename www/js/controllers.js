@@ -252,6 +252,16 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('ProfileCtrl',function($scope) {
+.controller('ProfileCtrl',function($scope, $state) {
+  $scope.$state = $state;
 
+  $scope.$on('$stateChangeSuccess',
+    function (event, toState, toParams, fromState, fromParam) {
+      console.log('from', fromState);
+      console.log('to', toState);
+      $scope.profileTab = toState.views.profileTab;
+      $scope.tabs = {};
+      $scope.tabs['tab1'] = $state.includes('tab1');
+      $scope.tabs['tab2'] = $state.includes('tab2');
+    });
 });
